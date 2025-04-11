@@ -1,7 +1,8 @@
 import sys
+import os
 import qrcode
 from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QPushButton, QLineEdit, QFileDialog
-from PyQt6.QtGui import QPixmap, QImage
+from PyQt6.QtGui import QPixmap, QIcon
 from qrcode.image.styledpil import StyledPilImage
 from qrcode.image.styles.moduledrawers.pil import RoundedModuleDrawer
 from PIL import Image
@@ -14,6 +15,8 @@ class QRCodeApp(QWidget):
         self.setWindowTitle("Generador de QR")
         self.setGeometry(100, 100, 400, 500)
 
+        self.setWindowIcon(QIcon("logo.png"))  # Logo de la app
+
         # Layout principal
         layout = QVBoxLayout()
 
@@ -23,7 +26,7 @@ class QRCodeApp(QWidget):
         layout.addWidget(self.input_text)
 
         # Botón para generar QR
-        self.generate_btn = QPushButton("Generar QR", self)
+        self.generate_btn = QPushButton("Generar Codigo QR", self)
         self.generate_btn.clicked.connect(self.generate_qr)
         layout.addWidget(self.generate_btn)
 
@@ -86,12 +89,28 @@ class QRCodeApp(QWidget):
             self.qr_label.setText("⚠️ Genera un QR primero.")
             return
 
-        options = QFileDialog.Options()
-        file_path, _ = QFileDialog.getSaveFileName(self, "Guardar QR", "", "PNG Files (*.png);;JPG Files (*.jpg);;All Files (*)", options=options)
+        # Abrir cuadro de diálogo para seleccionar la ruta y el nombre del archivo
+        file_path, _ = QFileDialog.getSaveFileName(
+            self, "Guardar QR", "mi_codigo_qr.png",  # Nombre por defecto
+            "PNG Files (*.png);;JPG Files (*.jpg);;All Files (*)"
+        )
 
-        if file_path:
+        if file_path:  # Si el usuario elige una ubicación
             self.qr_image.save(file_path)
             self.qr_label.setText("✅ QR guardado correctamente.")
+            
+            # Borrar el archivo temporal después de guardarlo
+            self.delete_temp_qr()
+
+    def delete_temp_qr(self):
+        """Elimina el archivo temporal temp_qr.png si existe."""
+        if os.path.exists("temp_qr.png"):
+            os.remove("temp_qr.png")
+
+    def closeEvent(self, event):
+        """Se ejecuta cuando se cierra la ventana, borra el archivo temporal."""
+        self.delete_temp_qr()
+        event.accept()
 
 # Ejecutar la aplicación
 if __name__ == "__main__":
