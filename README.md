@@ -1,38 +1,40 @@
 # 🧠 Generador de Códigos QR
 
-Esta es una aplicación de escritorio hecha en **Python con QtPy6** que permite generar **códigos QR estáticos y personalizados**, ideales para compartir enlaces, textos o cualquier dato de forma rápida y visual.
+Hola! 👋  
+Esta es una aplicación de escritorio desarrollada en **Python con QtPy6** que permite generar **códigos QR estáticos y personalizados** de forma sencilla. Es un proyecto que hice por gusto y con el deseo de **ofrecer una herramienta útil para cualquiera que necesite compartir información de manera práctica, visual y rápida**. 💡✨
 
 ---
 
 ## 💻 Cómo Usar la App
 
-1. Abre la carpeta `dist/`.
-2. Ejecuta el archivo `QRGenerator.exe` ✅ (puede tener otro nombre si lo cambiaste).
-3. Escribe el contenido que deseas codificar.
-4. Haz clic en "Generar QR" para ver la previsualización.
-5. Haz clic en "Guardar QR" para exportarlo como imagen.
+1. Descarga este proyecto.
+2. Ejecuta el archivo `QRGenerator.exe` ✅ (¡ese es el ejecutable de la app!).
+3. Ingresa el texto o enlace que deseas codificar.
+4. Presiona **"Generar QR"** para ver una previsualización en tiempo real.
+5. Presiona **"Guardar QR"** para exportarlo como imagen (.png o .jpg).
+
+> ✅ No necesitas instalar Python ni dependencias para usar la app. Solo ejecuta el `.exe` y listo.
 
 ---
 
 ## 🚀 Características
 
-- ✅ Genera códigos QR con solo ingresar texto o URL.
-- 🎨 Visualiza una **previsualización en tiempo real** del QR generado.
-- 🖌️ Estilo visual con módulos redondeados.
-- 💾 Posibilidad de guardar el QR como imagen (.png, .jpg).
-- 🧩 Interfaz gráfica amigable y sin consola emergente.
+- ✅ Generación instantánea de códigos QR.
+- 🎨 Vista previa del código QR antes de guardarlo.
+- 💾 Guardado en formatos de imagen estándar (.png, .jpg).
+- 🧩 Interfaz amigable, simple y sin consola emergente.
 
 ---
 
-## 📦 Cómo fue compilado
+## 📦 Compilación y Distribución
 
-La aplicación fue empaquetada usando [PyInstaller](https://www.pyinstaller.org/) con el siguiente comando:
+La app fue compilada con [PyInstaller](https://www.pyinstaller.org/) usando el siguiente comando:
 
 ```bash
 pyinstaller --onefile --windowed --icon=icon.ico qr_generator.py
 ```
 
-@aleatomic :: https://github.com/aleatomic
-
+Creado con 💙 por @aleatomic :: https://github.com/aleatomic
+¡Gracias por usar esta herramienta! Si te resulta útil, cualquier estrella ⭐ o comentario es bienvenido.
 
 
