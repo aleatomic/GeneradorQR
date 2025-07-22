@@ -6,7 +6,7 @@ Esta es una aplicación de escritorio hecha en **Python con QtPy6** que permite 
 
 ## 💻 Cómo Usar la App
 
-1. Abre la carpeta `dist/`.
+1. Descarga el repositorio, abre la carpeta `dist/`.
 2. Ejecuta el archivo `QRGenerator.exe` ✅ (puede tener otro nombre si lo cambiaste).
 3. Escribe el contenido que deseas codificar.
 4. Haz clic en "Generar QR" para ver la previsualización.

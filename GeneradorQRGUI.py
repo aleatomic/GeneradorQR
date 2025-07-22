@@ -13,7 +13,7 @@ class QRCodeApp(QWidget):
 
         # Configuración de la ventana
         self.setWindowTitle("Generador de QR")
-        self.setGeometry(100, 100, 400, 500)
+        self.setGeometry(100, 100, 400, 100)
 
         self.setWindowIcon(QIcon("logo.png"))  # Logo de la app
 
@@ -38,6 +38,17 @@ class QRCodeApp(QWidget):
         self.save_btn = QPushButton("Guardar QR", self)
         self.save_btn.clicked.connect(self.save_qr)
         layout.addWidget(self.save_btn)
+
+        # Etiquetas de información (versión y repositorio)
+        self.version_label = QLabel("Versión: 1.1.0", self)
+        layout.addWidget(self.version_label)
+
+        self.repo_label = QLabel(self)
+        self.repo_label.setText(
+            "Creador: @aleatomic | <a href='https://github.com/aleatomic/GeneradorQR'>Repositorio</a>"
+        )
+        self.repo_label.setOpenExternalLinks(True)
+        layout.addWidget(self.repo_label)
 
         # Configurar layout
         self.setLayout(layout)
