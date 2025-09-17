@@ -28,12 +28,12 @@ Esta es una aplicación de escritorio hecha en **Python con QtPy6** que permite 
 
 La aplicación fue empaquetada usando [PyInstaller](https://www.pyinstaller.org/) con el siguiente comando:
 
-# Licencia
-Este proyecto está bajo la Licencia MIT. Puedes ver el archivo LICENSE para más detalles. Esto significa que eres libre de usar, modificar y distribuir el código, siempre y cuando mantengas el aviso de copyright original.
-
 ```bash
 pyinstaller --onefile --windowed --icon=icon.ico qr_generator.py
 ```
+
+# Licencia
+Este proyecto está bajo la Licencia MIT. Puedes ver el archivo LICENSE para más detalles. Esto significa que eres libre de usar, modificar y distribuir el código, siempre y cuando mantengas el aviso de copyright original.
 
 @aleatomic :: https://github.com/aleatomic
 
